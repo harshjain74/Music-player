@@ -1,0 +1,80 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+ProcessException: ProcessException: Process exited abnormally:
+adb.exe: error: device 'f762c27d7ce4' not found
+  Command: C:\Users\Dell\AppData\Local\Android\sdk\platform-tools\adb.exe -s f762c27d7ce4 forward --remove tcp:56400
+
+```
+#0      RunResult.throwException (package:flutter_tools/src/base/process.dart:172:5)
+#1      AndroidDevicePortForwarder.unforward (package:flutter_tools/src/android/android_device.dart:1331:15)
+<asynchronous suspension>
+#2      AndroidDevicePortForwarder.dispose (package:flutter_tools/src/android/android_device.dart:1337:13)
+#3      AndroidDevice.dispose (package:flutter_tools/src/android/android_device.dart:837:27)
+#4      HotRunner.cleanupAtFinish (package:flutter_tools/src/run_hot.dart:1158:34)
+#5      ResidentRunner.waitForAppToFinish (package:flutter_tools/src/resident_runner.dart:1255:11)
+<asynchronous suspension>
+#6      HotRunner.attach (package:flutter_tools/src/run_hot.dart:318:22)
+#7      _rootRunUnary (dart:async/zone.dart:1198:47)
+#8      _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#9      _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#10     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#11     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#12     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#13     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+#14     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+#15     FlutterVmService.getFlutterViews (package:flutter_tools/src/vmservice.dart)
+#16     _rootRunUnary (dart:async/zone.dart:1198:47)
+#17     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#18     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#19     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#20     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#21     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#22     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:567:7)
+#23     _rootRun (dart:async/zone.dart:1190:13)
+#24     _CustomZone.run (dart:async/zone.dart:1093:19)
+#25     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#26     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#27     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#28     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#29     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#30     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 1.20.1, on Microsoft Windows [Version 10.0.19041.572], locale en-US)
+    • Flutter version 1.20.1 at C:\flutter
+    • Framework revision 2ae34518b8 (3 months ago), 2020-08-05 19:53:19 -0700
+    • Engine revision c8e3b94853
+    • Dart version 2.9.0
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.1)
+    • Android SDK at C:\Users\Dell\AppData\Local\Android\sdk
+    • Platform android-30, build-tools 30.0.1
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+    • All Android licenses accepted.
+
+[✓] Android Studio (version 3.5)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 44.0.1
+    • Dart plugin version 191.8593
+    • Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+
+[✓] VS Code (version 1.50.1)
+    • VS Code at C:\Users\Dell\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.15.1
+
+[✓] Connected device (1 available)
+    • Redmi 4 (mobile) • f762c27d7ce4 • android-arm64 • Android 7.1.2 (API 25)
+
+• No issues found!
+```
